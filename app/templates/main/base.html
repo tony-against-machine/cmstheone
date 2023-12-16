@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+
+<body>
+
+    {% block header %}
+    <nav>
+        <ul>
+            <li>
+                <a href="#">link 1</a>
+                <a href="{{ url_for('user_registration') }}">user-registration page</a>
+                <a href="{{ url_for('create_article') }}">create-article page</a>
+                <a href="{{ url_for('display_articles') }}">display-articles page</a>
+                <a href="{{ url_for('registration') }}">Registration</a>
+            </li>
+        </ul>
+    </nav>
+    {% endblock %}
+
+    {% block body %}
+
+    {% endblock %}
+</body>
+
+</html>
