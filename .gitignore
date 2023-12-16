@@ -3,6 +3,7 @@ __pycache__/
 cmstheonedb.db
 .idea/
 .env
+instance/
 
 # Created by https://www.toptal.com/developers/gitignore/api/windows,pycharm+all
 # Edit at https://www.toptal.com/developers/gitignore?templates=windows,pycharm+all
