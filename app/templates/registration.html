@@ -8,8 +8,12 @@ home title
 <h1>Registration</h1>
 <form method="POST" action="{{ url_for('registration') }}">
     {{ form.hidden_tag() }}
-    {{ form.username.label }} {{ form.username(size=20) }}<br>
-    {{ form.password.label }} {{ form.password(size=20) }}<br>
+    <div class="uname-jinja-form">
+        {{ form.username.label }} {{ form.username(size=20) }}
+    </div>
+    <br>
+    {{ form.password.label }} {{ form.password(size=20) }}
+    <br>
     {{ form.submit() }}
 </form>
 {% endblock %}
