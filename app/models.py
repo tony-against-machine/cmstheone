@@ -17,17 +17,6 @@ class Article(db.Model):
         return f'<Article {self.intro}>'
 
 
-class Users(db.Model):
-    user_id = db.Column(db.Integer, primary_key=True)
-    user_name = db.Column(db.String(32), nullable=True, unique=True)
-    user_email = db.Column(db.String(64), nullable=True, unique=True)
-    user_passwd = db.Column(db.String(640), nullable=True)
-    user_reg_date = db.Column(db.DateTime(timezone=True), server_default=func.now())
-
-    def __repr__(self):
-        return f'<User Name {self.user_name}>'
-
-
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(20), unique=True, nullable=False)

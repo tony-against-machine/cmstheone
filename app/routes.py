@@ -1,7 +1,7 @@
 from flask import render_template, redirect, request, url_for, flash
 from werkzeug.security import generate_password_hash
 from app import app, db, bcrypt
-from app.models import Article, Users, User, RegistrationForm
+from app.models import Article, User, RegistrationForm
 
 
 @app.route('/')
@@ -42,23 +42,6 @@ def display_articles():
 def article_more(article_id):
     article = Article.query.get_or_404(article_id)
     return render_template('article-more.html', article=article)
-
-
-@app.route('/user-registration', methods=['POST', 'GET'])
-def user_registration():
-    if request.method == 'POST':
-
-        try:
-            passwd_hash = generate_password_hash(request.form['passwd'])
-            user_email_passwd = Users(user_email=request.form['email'], user_passwd=passwd_hash)
-            db.session.add(user_email_passwd)
-            db.session.commit()
-            print('Пользователь добавлен')
-        except:
-            db.session.rollback()
-            print('Ошибка добавления пользователя в БД')
-
-    return render_template('user-registration.html')
 
 
 @app.route('/registration', methods=['GET', 'POST'])
