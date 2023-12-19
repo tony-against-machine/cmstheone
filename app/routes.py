@@ -59,6 +59,6 @@ def registration():
 
 @app.route('/display-users')
 def display_users():
-    users = User.query.order_by(User.created_at.desc()).all()
+    users = User.query.get_or_404(User) ### <---- START!!!
     return render_template('display-users.html', users=users)
 

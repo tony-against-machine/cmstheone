@@ -1,29 +1,7 @@
 {% extends 'main_html/base.html' %}
-
-{% block title %}
-display users title
-{% endblock %}
-
 {% block body %}
 <h1>Display Users</h1>
-
-<!-- {% for article in articles %} -->
-<div>
-    <p>
-        {{ article.article_id }}
-    </p>
-
-    {{ article.title }}
-    {{ article.intro}}
-
-    <p>
-        {{ article.text }}
-    </p>
-    <p>
-        {{ article.created_at }}
-    </p>
-    <!-- <a href="/article-more/{{ article.article_id }}">read more...</a> -->
-</div>
-{% endfor %}
-
+<p>
+    {{ users.username }}
+</p>
 {% endblock %}
