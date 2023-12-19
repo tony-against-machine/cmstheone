@@ -56,3 +56,9 @@ def registration():
         return render_template('index.html')
     return render_template('registration.html', form=form)
 
+
+@app.route('/display-users')
+def display_users():
+    users = User.query.order_by(User.created_at.desc()).all()
+    return render_template('display-users.html', users=users)
+
