@@ -15,7 +15,7 @@ def about():
     return render_template('about.html')
 
 
-@app.route('/create-article', methods=['POST', 'GET'])
+@app.route('/create_article', methods=['POST', 'GET'])
 def create_article():
     if request.method == 'POST':
         title = request.form['title']
@@ -25,11 +25,11 @@ def create_article():
         try:
             db.session.add(article)
             db.session.commit()
-            return render_template('create-article.html')
+            return render_template('create_article.html')
         except:
             print('Ошибка добавления статьи')
     else:
-        return render_template('create-article.html')
+        return render_template('create_article.html')
 
 
 @app.route('/display-articles')
