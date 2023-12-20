@@ -51,16 +51,11 @@ class LoginForm(FlaskForm):
 #     submit = SubmitField('Add Client')
 
 
-### add Note / start ###
-
 class Note(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     content = db.Column(db.String(200), nullable=False)
 
 
-# Create a simple form for adding a note
 class NoteForm(FlaskForm):
     note = StringField('Note')
     submit = SubmitField('Add Note')
-
-### add Note / end ###

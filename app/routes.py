@@ -57,23 +57,13 @@ def registration():
     return render_template('registration.html', form=form)
 
 
-# @app.route('/display-users')
-# def display_users():
-#     users = User.get_id(id)
-#     return render_template('display-users.html', users=users)
-
-
-### add Note / start ###
 
 @app.route('/add_note', methods=['GET', 'POST'])
 def add_note():
     form = NoteForm()
-
     if form.validate_on_submit():
-        # Process the submitted note and save it to the database
         submitted_note = form.note.data
         new_note = Note(content=submitted_note)
-
         try:
             db.session.add(new_note)
             db.session.commit()
@@ -81,12 +71,6 @@ def add_note():
         except Exception as e:
             print(f"Error adding note to database: {e}")
             db.session.rollback()
-
-        # Redirect to the home page or any other page after adding the note
         return redirect(url_for('add_note'))
-
     return render_template('add_note.html', form=form)
 
-
-
-### add Note / end ###
