@@ -66,4 +66,6 @@ def registration():
 @app.route('/post-comment', methods=['GET', 'POST'])
 def post_comment():
     form = PostComment()
+    t = PostComment()
+    print(t)
 
