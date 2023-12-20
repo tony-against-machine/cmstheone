@@ -1,7 +1,8 @@
 from flask import render_template, redirect, request, url_for, flash
+from flask_login import login_required
 from werkzeug.security import generate_password_hash
 from app import app, db, bcrypt
-from app.models import Article, User, RegistrationForm, PostComment
+from app.models import Article, User, RegistrationForm, Note, NoteForm
 
 
 @app.route('/')
@@ -63,3 +64,26 @@ def registration():
 #     return render_template('display-users.html', users=users)
 
 
+### add Note / start ###
+
+
+@app.route('/add_note', methods=['GET', 'POST'])
+@login_required
+def add_note():
+    form = NoteForm()
+
+    if form.validate_on_submit():
+        title = form.title.data
+        content = form.content.data
+
+        new_note = Note(title=title, content=content, author=current_user)
+        db.session.add(new_note)
+        db.session.commit()
+
+        flash('Note added successfully!', 'success')
+        return redirect(url_for('note_list'))
+
+    return render_template('add_note.html', form=form)
+
+
+### add Note / end ###

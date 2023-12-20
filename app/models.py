@@ -51,6 +51,9 @@ class LoginForm(FlaskForm):
 #     submit = SubmitField('Add Client')
 
 
+### add Note / start ###
+
+
 class NoteForm(FlaskForm):
     title = StringField('Note Title', validators=[DataRequired()])
     content = TextAreaField('Note Content', validators=[DataRequired()])
@@ -62,3 +65,6 @@ class Note(db.Model):
     title = db.Column(db.String(100), nullable=False)
     content = db.Column(db.Text, nullable=False)
     author_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+
+
+### add Note / end ###
