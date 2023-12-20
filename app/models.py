@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField
+from wtforms import StringField, PasswordField, SubmitField, TextAreaField
 from wtforms.validators import DataRequired, Length
 from flask_login import UserMixin
 from sqlalchemy.sql import func
@@ -49,3 +49,8 @@ class LoginForm(FlaskForm):
 # class ClientForm(FlaskForm):
 #     name = StringField('Client Name', validators=[DataRequired(), Length(min=2, max=50)])
 #     submit = SubmitField('Add Client')
+
+
+class PostComment(FlaskForm):
+    post_text = TextAreaField('Text', validators=[DataRequired(), Length(min=2, max=20)])
+
