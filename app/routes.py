@@ -1,7 +1,7 @@
 from flask import render_template, redirect, request, url_for, flash
 from werkzeug.security import generate_password_hash
 from app import app, db, bcrypt
-from app.models import Article, User, RegistrationForm
+from app.models import Article, User, RegistrationForm, NoteForm, Note
 
 
 @app.route('/')
@@ -65,6 +65,27 @@ def registration():
 
 ### add Note / start ###
 
+@app.route('/', methods=['GET', 'POST'])
+def add_note():
+    form = NoteForm()
+
+    if form.validate_on_submit():
+        # Process the submitted note and save it to the database
+        submitted_note = form.note.data
+        new_note = Note(content=submitted_note)
+
+        try:
+            db.session.add(new_note)
+            db.session.commit()
+            print(f"Note added to database: {submitted_note}")
+        except Exception as e:
+            print(f"Error adding note to database: {e}")
+            db.session.rollback()
+
+        # Redirect to the home page or any other page after adding the note
+        return redirect(url_for('add_note'))
+
+    return render_template('add_note.html', form=form)
 
 
 
