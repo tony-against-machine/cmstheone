@@ -65,7 +65,7 @@ def registration():
 
 ### add Note / start ###
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/add_note', methods=['GET', 'POST'])
 def add_note():
     form = NoteForm()
 
