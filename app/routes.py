@@ -38,10 +38,10 @@ def display_articles():
     return render_template('display-articles.html', articles=articles)
 
 
-@app.route('/article-more/<int:article_id>/')
+@app.route('/article_more/<int:article_id>/')
 def article_more(article_id):
     article = Article.query.get_or_404(article_id)
-    return render_template('article-more.html', article=article)
+    return render_template('article_more.html', article=article)
 
 
 @app.route('/registration', methods=['GET', 'POST'])
