@@ -1,7 +1,7 @@
 from flask import render_template, redirect, request, url_for, flash
 from werkzeug.security import generate_password_hash
 from app import app, db, bcrypt
-from app.models import Article, User, RegistrationForm
+from app.models import Article, User, RegistrationForm, PostComment
 
 
 @app.route('/')
