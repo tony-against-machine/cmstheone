@@ -51,4 +51,7 @@ class LoginForm(FlaskForm):
 #     submit = SubmitField('Add Client')
 
 
-
+class NoteForm(FlaskForm):
+    title = StringField('Note Title', validators=[DataRequired()])
+    content = TextAreaField('Note Content', validators=[DataRequired()])
+    submit = SubmitField('Add Note')
