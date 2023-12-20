@@ -51,6 +51,4 @@ class LoginForm(FlaskForm):
 #     submit = SubmitField('Add Client')
 
 
-class PostComment(FlaskForm):
-    post_text = TextAreaField('Text', validators=[DataRequired(), Length(min=2, max=20)])
 
