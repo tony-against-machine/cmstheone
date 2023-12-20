@@ -67,23 +67,6 @@ def registration():
 ### add Note / start ###
 
 
-@app.route('/add_note', methods=['GET', 'POST'])
-@login_required
-def add_note():
-    form = NoteForm()
-
-    if form.validate_on_submit():
-        title = form.title.data
-        content = form.content.data
-
-        new_note = Note(title=title, content=content, author=current_user)
-        db.session.add(new_note)
-        db.session.commit()
-
-        flash('Note added successfully!', 'success')
-        return redirect(url_for('note_list'))
-
-    return render_template('add_note.html', form=form)
 
 
 ### add Note / end ###
