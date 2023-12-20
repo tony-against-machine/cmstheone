@@ -62,3 +62,8 @@ def registration():
 #     users = User.get_id(id)
 #     return render_template('display-users.html', users=users)
 
+
+@app.route('/post-comment', methods=['GET', 'POST'])
+def post_comment():
+    form = PostComment()
+
