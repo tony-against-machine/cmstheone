@@ -32,10 +32,10 @@ def create_article():
         return render_template('create_article.html')
 
 
-@app.route('/display-articles')
+@app.route('/display_articles')
 def display_articles():
     articles = Article.query.order_by(Article.created_at.desc()).all()
-    return render_template('display-articles.html', articles=articles)
+    return render_template('display_articles.html', articles=articles)
 
 
 @app.route('/article_more/<int:article_id>/')
