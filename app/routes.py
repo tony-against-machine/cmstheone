@@ -57,8 +57,8 @@ def registration():
     return render_template('registration.html', form=form)
 
 
-@app.route('/display-users')
-def display_users():
-    users = User.query.get_or_404(User) ### <---- START!!!
-    return render_template('display-users.html', users=users)
+# @app.route('/display-users')
+# def display_users():
+#     users = User.get_id(id)
+#     return render_template('display-users.html', users=users)
 
