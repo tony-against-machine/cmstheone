@@ -63,7 +63,10 @@ def add_note():
     form = NoteForm()
     if form.validate_on_submit():
         submitted_note = form.note.data
-        new_note = Note(content=submitted_note)
+        q = form.title.data
+        print('q!!!!!!!!!!!!!', q)
+        print('submitted_note', submitted_note)
+        new_note = Note(content=submitted_note, title=q)
         try:
             db.session.add(new_note)
             db.session.commit()

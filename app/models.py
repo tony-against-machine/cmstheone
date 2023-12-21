@@ -53,9 +53,11 @@ class LoginForm(FlaskForm):
 
 class Note(db.Model):
     id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(100), nullable=False)
     content = db.Column(db.String(200), nullable=False)
 
 
 class NoteForm(FlaskForm):
-    note = StringField('Note')
+    title = StringField('Title', render_kw={"placeholder": "Enter title"})
+    note = StringField('Note', render_kw={"placeholder": "Enter your note"})
     submit = SubmitField('Add Note')
