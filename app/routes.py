@@ -26,8 +26,8 @@ def create_article():
             db.session.add(article)
             db.session.commit()
             return render_template('create_article.html')
-        except:
-            print('Ошибка добавления статьи')
+        except Exception as e:
+            print(f'Ошибка добавления статьи: {e}')
     else:
         return render_template('create_article.html')
 
