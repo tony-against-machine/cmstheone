@@ -68,7 +68,6 @@ def add_note():
         try:
             db.session.add(new_note)
             db.session.commit()
-            print(f'Note added to database: {submitted_title}, {submitted_note}')
         except Exception as e:
             print(f'Error adding note to database: {e}')
             db.session.rollback()
