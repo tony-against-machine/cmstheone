@@ -68,9 +68,9 @@ def add_note():
         try:
             db.session.add(new_note)
             db.session.commit()
-            print(f"Note added to database: {submitted_title}, {submitted_note}")
+            print(f'Note added to database: {submitted_title}, {submitted_note}')
         except Exception as e:
-            print(f"Error adding note to database: {e}")
+            print(f'Error adding note to database: {e}')
             db.session.rollback()
         return redirect(url_for('add_note'))
     return render_template('add_note.html', form=form)
