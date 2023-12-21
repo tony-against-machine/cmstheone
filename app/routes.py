@@ -74,3 +74,7 @@ def add_note():
         return redirect(url_for('add_note'))
     return render_template('add_note.html', form=form)
 
+@app.route('/display_note')
+def display_note():
+    notes = Note.query.order_by(Note.created_at.desc()).all()
+    return render_template('display_articles.html', articles=articles)
