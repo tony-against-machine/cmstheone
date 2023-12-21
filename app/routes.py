@@ -77,4 +77,4 @@ def add_note():
 @app.route('/display_note')
 def display_note():
     notes = Note.query.order_by(Note.created_at.desc()).all()
-    return render_template('display_articles.html', articles=articles)
+    return render_template('display_note.html', notes=notes)
