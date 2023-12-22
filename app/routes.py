@@ -1,3 +1,4 @@
+from datetime import datetime
 from flask import render_template, redirect, request, url_for, flash
 from werkzeug.security import generate_password_hash
 from app import app, db, bcrypt
@@ -64,7 +65,7 @@ def add_note():
     if form.validate_on_submit():
         submitted_title = form.title.data
         submitted_note = form.note.data
-        new_note = Note(title=submitted_title, content=submitted_note)
+        new_note = Note(title=submitted_title, content=submitted_note, timestamp=datetime.utcnow())
         try:
             db.session.add(new_note)
             db.session.commit()

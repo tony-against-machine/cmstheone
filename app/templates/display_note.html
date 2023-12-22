@@ -6,4 +6,23 @@ display note title
 
 {% block body %}
 <h1>display note body</h1>
+
+{% for note in notes %}
+<div>
+    <p>
+        {{ note.article_id }}
+    </p>
+
+    {{ note.title }}
+
+
+    <p>
+        {{ note.content }}
+    </p>
+    <p>
+        {{ note.created_at }}
+    </p>
+    <a href="/article_more/{{ article.article_id }}">read more...</a>
+</div>
+
 {% endblock %}
