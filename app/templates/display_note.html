@@ -12,17 +12,10 @@ display note title
     <p>
         {{ note.article_id }}
     </p>
-
-    {{ note.title }}
-
-
     <p>
-        {{ note.content }}
+        {{ note.title }}
     </p>
-    <p>
-        {{ note.created_at }}
-    </p>
-    <a href="/article_more/{{ article.article_id }}">read more...</a>
 </div>
+{% endfor %}
 
 {% endblock %}
