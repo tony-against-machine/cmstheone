@@ -80,7 +80,3 @@ def display_note():
     notes = Note.query.order_by(Note.timestamp.desc()).all()
     return render_template('display_note.html', notes=notes)
 
-
-@app.route('/add_client', methods=['GET', 'POST'])
-def add_client():
-    return render_template('add_client.html')
