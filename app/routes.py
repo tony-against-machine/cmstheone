@@ -1,8 +1,8 @@
 from datetime import datetime
-from flask_login import login_user
+from flask_login import login_user, LoginManager
 from flask import render_template, redirect, request, url_for, flash
 from werkzeug.security import generate_password_hash
-from app import app, db, bcrypt
+from app import app, db, bcrypt, login_manager
 from app.models import Article, User, RegistrationForm, NoteForm, Note, LoginForm
 
 
@@ -70,6 +70,11 @@ def login():
         else:
             flash('Не удалось выполнить вход! Проверь данные!', 'danger')
     return render_template('login.html', form=form)
+
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
 
 
 @app.route('/add_note', methods=['GET', 'POST'])
