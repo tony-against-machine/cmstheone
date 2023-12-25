@@ -54,7 +54,7 @@ def registration():
         db.session.add(new_user)
         db.session.commit()
         flash('Твоя учетная запись создана!', 'success')
-        return render_template('index.html')
+        return redirect(url_for('login'))
     return render_template('registration.html', form=form)
 
 
