@@ -9,13 +9,8 @@ about title
 <form method="post" action="{{ url_for('add_note') }}">
     {{ form.csrf_token }}
     {{ form.hidden_tag() }}
-
-    <label for="title">Title:</label>
-    {{ form.title(class="form-control") }}
-
-    <label for="note">Note:</label>
-    {{ form.note(class="form-control") }}
-
+    {{ form.title.label }} {{ form.title(size=20) }}
+    {{ form.note.label }} {{ form.title(size=20) }}
     {{ form.submit(class="btn btn-primary") }}
 </form>
 {% endblock %}
