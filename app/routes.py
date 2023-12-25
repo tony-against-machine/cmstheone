@@ -95,7 +95,7 @@ def add_note():
             db.session.add(new_note)
             db.session.commit()
         except Exception as e:
-            print(f'Error adding note to database: {e}')
+            print(f'Ошибка при добалвении заметки: {e}')
             db.session.rollback()
         return redirect(url_for('add_note'))
     return render_template('add_note.html', form=form)
