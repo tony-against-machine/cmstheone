@@ -6,6 +6,9 @@ from app import app, db, bcrypt, login_manager
 from app.models import Article, User, RegistrationForm, NoteForm, Note, LoginForm, Client, ClientForm
 
 
+ALLOW_REGISTRATION = False
+
+
 @app.route('/')
 @app.route('/home')
 def index():
@@ -48,6 +51,10 @@ def article_more(article_id):
 
 @app.route('/registration', methods=['GET', 'POST'])
 def registration():
+    if not ALLOW_REGISTRATION:
+        print(f'Регистрация новых пользователей отключена! Увидимся позже!')
+        return redirect(url_for('login'))
+
     form = RegistrationForm()
     if form.validate_on_submit():
         hashed_password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
