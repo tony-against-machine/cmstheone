@@ -3,7 +3,7 @@ from flask_login import login_user, LoginManager, login_required, current_user
 from flask import render_template, redirect, request, url_for, flash
 from werkzeug.security import generate_password_hash
 from app import app, db, bcrypt, login_manager
-from app.models import Article, User, RegistrationForm, NoteForm, Note, LoginForm, Client
+from app.models import Article, User, RegistrationForm, NoteForm, Note, LoginForm, Client, ClientForm
 
 
 @app.route('/')
@@ -70,6 +70,19 @@ def login():
         else:
             print(f'Не удалось выполнить вход! Проверь данные')
     return render_template('login.html', form=form)
+
+
+@app.route('/add_client', methods=['GET', 'POST'])
+@login_required
+def add_client():
+    form = ClientForm()
+    if form.validate_on_submit():
+        new_client = Client(name=form.name.data, user_id=current_user.id)
+        db.session.add(new_client)
+        db.session.commit()
+        print(f'Клиент {new_client.name} успешно добавлен!')
+        return redirect(url_for('dashboard'))
+    return render_template('add_client.html', form=form)
 
 
 @login_manager.user_loader
