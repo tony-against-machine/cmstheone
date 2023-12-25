@@ -42,6 +42,11 @@ class Client(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
 
 
+class ClientForm(FlaskForm):
+    name = StringField('Client Name', validators=[DataRequired(), Length(min=2, max=50)])
+    submit = SubmitField('Add Client')
+
+
 class Note(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100), nullable=False)
