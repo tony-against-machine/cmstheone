@@ -8,12 +8,8 @@ home title
 <h1>Registration</h1>
 <form method="POST" action="{{ url_for('registration') }}">
     {{ form.hidden_tag() }}
-    <div>
-        {{ form.username.label }} {{ form.username(size=20) }}
-    </div>
-    <br>
+    {{ form.username.label }} {{ form.username(size=20) }}
     {{ form.password.label }} {{ form.password(size=20) }}
-    <br>
     {{ form.submit() }}
 </form>
 {% endblock %}
