@@ -1,9 +1,9 @@
 from datetime import datetime
-from flask_login import login_user, LoginManager, login_required
+from flask_login import login_user, LoginManager, login_required, current_user
 from flask import render_template, redirect, request, url_for, flash
 from werkzeug.security import generate_password_hash
 from app import app, db, bcrypt, login_manager
-from app.models import Article, User, RegistrationForm, NoteForm, Note, LoginForm
+from app.models import Article, User, RegistrationForm, NoteForm, Note, LoginForm, Client
 
 
 @app.route('/')
@@ -80,7 +80,7 @@ def load_user(user_id):
 @app.route('/dashboard')
 @login_required
 def dashboard():
-    # clients = Client.query.filter_by(user_id=current_user.id).all()
+    clients = Client.query.filter_by(user_id=current_user.id).all()
     return render_template('dashboard.html', clients=clients)
 
 
