@@ -1,8 +1,9 @@
 from datetime import datetime
+from flask_login import login_user
 from flask import render_template, redirect, request, url_for, flash
 from werkzeug.security import generate_password_hash
 from app import app, db, bcrypt
-from app.models import Article, User, RegistrationForm, NoteForm, Note
+from app.models import Article, User, RegistrationForm, NoteForm, Note, LoginForm
 
 
 @app.route('/')
@@ -57,6 +58,18 @@ def registration():
         return redirect(url_for('login'))
     return render_template('registration.html', form=form)
 
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    form = LoginForm()
+    if form.validate_on_submit():
+        user = User.query.filter_by(username=form.username.data).first()
+        if user and bcrypt.check_password_hash(user.password, form.password.data):
+            login_user(user)
+            return redirect(url_for('dashboard'))
+        else:
+            flash('Не удалось выполнить вход! Проверь данные!', 'danger')
+    return render_template('login.html', form=form)
 
 
 @app.route('/add_note', methods=['GET', 'POST'])
