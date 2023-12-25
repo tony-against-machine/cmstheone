@@ -1,0 +1,15 @@
+{% extends 'main_html/base.html' %}
+
+{% block title%}
+dashboard title
+{% endblock %}
+
+{% block body %}
+<h1>Hello, {{ current_user.username }}!</h1>
+<h2>Your Clients:</h2>
+<ul>
+    {% for client in clients %}
+    <li>{{ client.name }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
