@@ -6,7 +6,7 @@ about title
 
 {% block body %}
 <h1>Add Note</h1>
-<form method="post" action="{{ url_for('add_note') }}">
+<form method="POST" action="{{ url_for('add_note') }}">
     {{ form.csrf_token }}
     {{ form.hidden_tag() }}
     {{ form.title.label }} {{ form.title(size=20) }}
