@@ -68,7 +68,7 @@ def login():
             login_user(user)
             return redirect(url_for('dashboard'))
         else:
-            flash('Не удалось выполнить вход! Проверь данные!', 'danger')
+            print(f'Не удалось выполнить вход! Проверь данные')
     return render_template('login.html', form=form)
 
 
