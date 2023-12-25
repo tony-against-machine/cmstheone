@@ -54,7 +54,7 @@ def registration():
         new_user = User(username=form.username.data, password=hashed_password)
         db.session.add(new_user)
         db.session.commit()
-        flash('Твоя учетная запись создана!', 'success')
+        print(f'Учетная запись {new_user.username} создана')
         return redirect(url_for('login'))
     return render_template('registration.html', form=form)
 
