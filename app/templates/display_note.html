@@ -10,10 +10,12 @@ display note title
 {% for note in notes %}
 <div>
     <p>
-        {{ note.article_id }}
+        Note Title:
+        {{ note.title }}
     </p>
     <p>
-        {{ note.title }}
+        Note Content
+        {{ note.content }}
     </p>
 </div>
 {% endfor %}
