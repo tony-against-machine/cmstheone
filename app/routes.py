@@ -6,7 +6,7 @@ from app import app, db, bcrypt, login_manager
 from app.models import Article, User, RegistrationForm, NoteForm, Note, LoginForm, Client, ClientForm
 
 
-ALLOW_REGISTRATION = False
+ALLOW_REGISTRATION = True
 
 
 @app.route('/')
