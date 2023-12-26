@@ -45,6 +45,7 @@ class Client(db.Model):
 
 class ClientForm(FlaskForm):
     name = StringField('Client Name', validators=[DataRequired(), Length(min=2, max=50)])
+    phone = StringField('Client Phone', validators=[DataRequired(), Length(min=7, max=20)])
     submit = SubmitField('Add Client')
 
 
