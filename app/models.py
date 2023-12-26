@@ -57,7 +57,7 @@ class Note(db.Model):
 
 
 class NoteForm(FlaskForm):
-    title = StringField('Title', render_kw={"placeholder": "Enter title"})
-    note = StringField('Note', render_kw={"placeholder": "Enter your note"})
+    title = StringField('Title', validators=[DataRequired(), Length(min=2, max=50)])
+    note = StringField('Note', validators=[DataRequired(), Length(min=2, max=50)])
     submit = SubmitField('Add Note')
 
