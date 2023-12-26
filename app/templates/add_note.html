@@ -10,7 +10,7 @@ about title
     {{ form.csrf_token }}
     {{ form.hidden_tag() }}
     {{ form.title.label }} {{ form.title(size=20) }}
-    {{ form.content.label }} {{ form.title(size=20) }}
+    {{ form.content.label }} {{ form.content(size=20) }}
     {{ form.submit(class="btn btn-primary") }}
 </form>
 {% endblock %}
