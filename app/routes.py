@@ -84,7 +84,7 @@ def login():
 def add_client():
     form = ClientForm()
     if form.validate_on_submit():
-        new_client = Client(name=form.name.data, user_id=current_user.id)
+        new_client = Client(name=form.name.data, phone=form.phone.data ,user_id=current_user.id)
         db.session.add(new_client)
         db.session.commit()
         print(f'Клиент {new_client.name} успешно добавлен!')
