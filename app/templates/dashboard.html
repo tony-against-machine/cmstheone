@@ -5,11 +5,11 @@ dashboard title
 {% endblock %}
 
 {% block body %}
-<h1>Hello, {{ current_user.username }}!</h1>
-<h2>Your Clients:</h2>
+<h1>Удачных продаж, {{ current_user.username }}!</h1>
+<h2>Наши уважаемые клиенты:</h2>
 <ul>
     {% for client in clients %}
-    <li>{{ client.name }}</li>
+    <li>Имя Клиента: {{ client.name }} Телефон клиента: {{ client.phone }}</li>
     {% endfor %}
 </ul>
 {% endblock %}
