@@ -16,18 +16,16 @@
     {% block header %}
     <nav>
         <ul>
-            <li>
-                <a href="{{ url_for('about') }}">About</a>
-                <a href="{{ url_for('add_client') }}">Add Client</a>
-                <a href="{{ url_for('add_note') }}">Add Note</a>
-                <a href="{{ url_for('create_article') }}">Create article</a>
-                <a href="{{ url_for('dashboard') }}">Dashboard</a>
-                <a href="{{ url_for('display_articles') }}">Display Articles</a>
-                <a href="{{ url_for('display_note') }}">Display Note</a>
-                <a href="{{ url_for('index') }}">Index</a>
-                <a href="{{ url_for('login') }}">Login</a>
-                <a href="{{ url_for('registration') }}">Registration</a>
-            </li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('add_client') }}">Add Client</a></li>
+            <li><a href="{{ url_for('add_note') }}">Add Note</a></li>
+            <li><a href="{{ url_for('create_article') }}">Create article</a></li>
+            <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+            <li><a href="{{ url_for('display_articles') }}">Display Articles</a></li>
+            <li><a href="{{ url_for('display_note') }}">Display Note</a></li>
+            <li><a href="{{ url_for('index') }}">Index</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+            <li><a href="{{ url_for('registration') }}">Registration</a></li>
         </ul>
     </nav>
     {% endblock %}
