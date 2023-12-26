@@ -109,7 +109,7 @@ def add_note():
     form = NoteForm()
     if form.validate_on_submit():
         submitted_title = form.title.data
-        submitted_note = form.note.data
+        submitted_note = form.content.data
         new_note = Note(title=submitted_title, content=submitted_note, timestamp=datetime.utcnow())
         try:
             db.session.add(new_note)
