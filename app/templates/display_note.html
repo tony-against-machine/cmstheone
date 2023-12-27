@@ -9,14 +9,9 @@ display note title
 
 {% for note in notes %}
 <div>
-    <p>
-        Note Title:
-        {{ note.title }}
-    </p>
-    <p>
-        Note Content
-        {{ note.content }}
-    </p>
+
+    <strong>Note Title:</strong> {{ note.title }} <strong>Note Content:</strong> {{ note.content }}
+
 </div>
 {% endfor %}
 
