@@ -20,12 +20,6 @@ def about():
     return render_template('about.html')
 
 
-@app.route('/display_articles')
-def display_articles():
-    articles = Article.query.order_by(Article.created_at.desc()).all()
-    return render_template('display_articles.html', articles=articles)
-
-
 @app.route('/article_more/<int:article_id>/')
 def article_more(article_id):
     article = Article.query.get_or_404(article_id)
