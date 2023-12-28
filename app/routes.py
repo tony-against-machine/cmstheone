@@ -20,17 +20,12 @@ def about():
     return render_template('about.html')
 
 
-@app.route('/article_more/<int:article_id>/')
-def article_more(article_id):
-    article = Article.query.get_or_404(article_id)
-    return render_template('article_more.html', article=article)
-
-
 @app.route('/registration', methods=['GET', 'POST'])
 def registration():
     if not ALLOW_REGISTRATION:
         print(f'Регистрация новых пользователей отключена! Увидимся позже!')
         return redirect(url_for('login'))
+
 
     form = RegistrationForm()
     if form.validate_on_submit():
