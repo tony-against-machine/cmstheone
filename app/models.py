@@ -7,17 +7,6 @@ from sqlalchemy.sql import func
 from app import db
 
 
-class Article(db.Model):
-    article_id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(100), nullable=False)
-    intro = db.Column(db.String(100), nullable=False)
-    text = db.Column(db.String(80), unique=True, nullable=False)
-    created_at = db.Column(db.DateTime(timezone=True), server_default=func.now())
-
-    def __repr__(self):
-        return f'<Article {self.intro}>'
-
-
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(20), unique=True, nullable=False)
