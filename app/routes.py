@@ -3,7 +3,7 @@ from flask_login import login_user, LoginManager, login_required, current_user
 from flask import render_template, redirect, request, url_for, flash
 from werkzeug.security import generate_password_hash
 from app import app, db, bcrypt, login_manager
-from app.models import Article, User, RegistrationForm, NoteForm, Note, LoginForm, Client, ClientForm
+from app.models import User, RegistrationForm, NoteForm, Note, LoginForm, Client, ClientForm
 
 
 ALLOW_REGISTRATION = True
