@@ -20,23 +20,6 @@ def about():
     return render_template('about.html')
 
 
-@app.route('/create_article', methods=['POST', 'GET'])
-def create_article():
-    if request.method == 'POST':
-        title = request.form['title']
-        intro = request.form['intro']
-        text = request.form['text']
-        article = Article(title=title, intro=intro, text=text)
-        try:
-            db.session.add(article)
-            db.session.commit()
-            return redirect('display_articles')
-        except Exception as e:
-            print(f'Ошибка добавления статьи: {e}')
-    else:
-        return render_template('create_article.html')
-
-
 @app.route('/display_articles')
 def display_articles():
     articles = Article.query.order_by(Article.created_at.desc()).all()
