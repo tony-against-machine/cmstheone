@@ -23,7 +23,7 @@ def about():
 @app.route('/registration', methods=['GET', 'POST'])
 def registration():
     if not ALLOW_REGISTRATION:
-        print(f'Регистрация новых пользователей отключена! Увидимся позже!')
+        print(f'Регистрация новых пользователей отключина!')
         return redirect(url_for('login'))
 
 
