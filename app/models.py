@@ -1,9 +1,8 @@
 from datetime import datetime
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField, TextAreaField
+from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import DataRequired, Length
 from flask_login import UserMixin
-from sqlalchemy.sql import func
 from app import db
 
 
