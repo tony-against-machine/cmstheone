@@ -1,6 +1,6 @@
 {% extends 'main_html/base.html' %}
 
-{% block title%}
+{% block title %}
 dashboard title
 {% endblock %}
 
@@ -9,7 +9,7 @@ dashboard title
 <h2>Наши уважаемые клиенты:</h2>
 <ul>
     {% for client in clients %}
-    <li>Имя Клиента: {{ client.name }} Телефон клиента: {{ client.phone }}</li>
+    <li>name: {{ client.name }} (added by: {{ client.username }}) phone: {{ client.phone }}</li>
     {% endfor %}
 </ul>
 {% endblock %}

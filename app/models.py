@@ -29,7 +29,6 @@ class Client(db.Model):
     name = db.Column(db.String(50), nullable=False)
     phone = db.Column(db.String(20), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-
     user = db.relationship('User', backref='clients', foreign_keys=[user_id])
 
 
