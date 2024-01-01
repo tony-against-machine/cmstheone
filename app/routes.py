@@ -72,7 +72,8 @@ def load_user(user_id):
 @app.route('/dashboard')
 @login_required
 def dashboard():
-    clients = Client.query.all()
+
+    clients = Client.query.join(User).add_columns(Client.name, Client.phone, User.username).all()
     return render_template('dashboard.html', clients=clients)
 
 
