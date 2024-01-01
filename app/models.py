@@ -30,6 +30,8 @@ class Client(db.Model):
     phone = db.Column(db.String(20), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
 
+    user = db.relationship('User', backref='clients', foreign_keys=[user_id])
+
 
 class ClientForm(FlaskForm):
     name = StringField('Client Name', validators=[DataRequired(), Length(min=2, max=50)])
