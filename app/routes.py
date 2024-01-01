@@ -72,7 +72,7 @@ def load_user(user_id):
 @app.route('/dashboard')
 @login_required
 def dashboard():
-    clients = Client.query.filter_by(user_id=current_user.id).all()
+    clients = Client.query.all()
     return render_template('dashboard.html', clients=clients)
 
 
