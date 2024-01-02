@@ -64,6 +64,23 @@ def add_client():
     return render_template('add_client.html', form=form)
 
 
+
+@app.route('/modify_balance/<int:client_id>', methods=['POST'])
+@login_required
+def modify_balance(client_id):
+    client = Client.query.get_or_404(client_id)
+    amount = float(request.form['amount'])
+
+    if request.form['action'] == 'add':
+        client.balance += amount
+    elif request.form['action'] == 'subtract':
+        client.balance -= amount
+
+    db.session.commit()
+    flash(f'Balance modified for {client.name}. New balance: {client.balance}', 'success')
+    return redirect(url_for('dashboard'))
+
+
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
