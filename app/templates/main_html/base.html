@@ -14,16 +14,48 @@
 <body>
 
     {% block header %}
-    <nav>
-        <ul>
-            <li><a href="{{ url_for('about') }}">О нас</a></li>
-            <li><a href="{{ url_for('add_client') }}">Добавить клиента</a></li>
-            <li><a href="{{ url_for('add_note') }}">Добавить запись</a></li>
-            <li><a href="{{ url_for('dashboard') }}">Список клиентов (Панель инструментов)</a></li>
-            <li><a href="{{ url_for('display_note') }}">Список записей</a></li>
-            <li><a href="{{ url_for('index') }}">Индекс</a></li>
-            <li><a href="{{ url_for('login') }}">Вход</a></li>
-            <li><a href="{{ url_for('registration') }}">Регистрация</a></li>
+    <nav class="header-nav">
+        <ul class="header-list list-reset flex">
+            <li class="header-list-item">
+                <a href="{{ url_for('about') }}" class="nav__link">
+                    О&nbsp;нас
+                </a>
+            </li>
+            <li class="header-list-item">
+                <a href="{{ url_for('add_client') }}" class="nav__link">
+                    Добавить клиента
+                </a>
+            </li>
+            <li class="header-list-item">
+                <a href="{{ url_for('add_note') }}" class="nav__link">
+                    Добавить запись
+                </a>
+            </li>
+            <li class="header-list-item">
+                <a href="{{ url_for('dashboard') }}" class="nav__link">
+                    Список клиентов (Панель инструментов)
+                </a>
+            </li>
+            <li class="header-list-item">
+                <a href="{{ url_for('display_note') }}" class="nav__link">
+                    Список записей
+                </a>
+            </li>
+            <li class="header-list-item">
+                <a href="{{ url_for('index') }}" class="nav__link">
+                    Индекс
+                </a>
+            </li>
+            <li class="header-list-item">
+                <a href="{{ url_for('login') }}" class="nav__link">
+                    Вход
+                </a>
+            </li>
+            <li class="header-list-item">
+                <a href="{{ url_for('registration') }}" class="nav__link">
+                    Регистрация
+                </a>
+            </li>
         </ul>
     </nav>
     {% endblock %}
