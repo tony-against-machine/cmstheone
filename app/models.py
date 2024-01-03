@@ -13,9 +13,9 @@ class User(db.Model, UserMixin):
 
 
 class RegistrationForm(FlaskForm):
-    username = StringField('Username', validators=[DataRequired(), Length(min=2, max=20)])
-    password = PasswordField('Password', validators=[DataRequired()])
-    submit = SubmitField('Sign Up')
+    username = StringField('Имя пользователя (Администратора)', validators=[DataRequired(), Length(min=2, max=20)])
+    password = PasswordField('Пароль', validators=[DataRequired()])
+    submit = SubmitField('Регистрация')
 
 
 class LoginForm(FlaskForm):
