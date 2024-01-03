@@ -25,4 +25,13 @@
     transition: color .3s ease-in-out;
 }
 
+.header__bottom-block {
+    height: 70px;
+    align-items: center;
+    padding: 0 45px;
+    justify-content: space-between;
+    background-color: var(--color-white);
+    border-radius: 15px;
+  }
+
 /*/header*/
