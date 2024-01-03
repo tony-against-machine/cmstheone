@@ -19,6 +19,10 @@
 
 /*header*/
 
+.header {
+    margin-bottom: 70px;
+  }
+
 .header-list-item:not(:last-child) {
     margin-right: 45px;
 }
