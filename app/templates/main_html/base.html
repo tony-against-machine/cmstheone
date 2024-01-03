@@ -14,52 +14,56 @@
 <body>
 
     {% block header %}
-    <div class="header__bottom-block flex">
-        <nav class="header-nav">
-            <ul class="header-list list-reset flex">
-                <li class="header-list-item">
-                    <a href="{{ url_for('about') }}" class="nav__link">
-                        О&nbsp;нас
-                    </a>
-                </li>
-                <li class="header-list-item">
-                    <a href="{{ url_for('add_client') }}" class="nav__link">
-                        Добавить клиента
-                    </a>
-                </li>
-                <li class="header-list-item">
-                    <a href="{{ url_for('add_note') }}" class="nav__link">
-                        Добавить запись
-                    </a>
-                </li>
-                <li class="header-list-item">
-                    <a href="{{ url_for('dashboard') }}" class="nav__link">
-                        Список клиентов (Панель инструментов)
-                    </a>
-                </li>
-                <li class="header-list-item">
-                    <a href="{{ url_for('display_note') }}" class="nav__link">
-                        Список записей
-                    </a>
-                </li>
-                <li class="header-list-item">
-                    <a href="{{ url_for('index') }}" class="nav__link">
-                        Индекс
-                    </a>
-                </li>
-                <li class="header-list-item">
-                    <a href="{{ url_for('login') }}" class="nav__link">
-                        Вход
-                    </a>
-                </li>
-                <li class="header-list-item">
-                    <a href="{{ url_for('registration') }}" class="nav__link">
-                        Регистрация
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </div>
+    <header class="header">
+        <div class="container">
+            <div class="header__bottom-block flex">
+                <nav class="header-nav">
+                    <ul class="header-list list-reset flex">
+                        <li class="header-list-item">
+                            <a href="{{ url_for('about') }}" class="nav__link">
+                                О&nbsp;нас
+                            </a>
+                        </li>
+                        <li class="header-list-item">
+                            <a href="{{ url_for('add_client') }}" class="nav__link">
+                                Добавить клиента
+                            </a>
+                        </li>
+                        <li class="header-list-item">
+                            <a href="{{ url_for('add_note') }}" class="nav__link">
+                                Добавить запись
+                            </a>
+                        </li>
+                        <li class="header-list-item">
+                            <a href="{{ url_for('dashboard') }}" class="nav__link">
+                                Список клиентов (Панель инструментов)
+                            </a>
+                        </li>
+                        <li class="header-list-item">
+                            <a href="{{ url_for('display_note') }}" class="nav__link">
+                                Список записей
+                            </a>
+                        </li>
+                        <li class="header-list-item">
+                            <a href="{{ url_for('index') }}" class="nav__link">
+                                Индекс
+                            </a>
+                        </li>
+                        <li class="header-list-item">
+                            <a href="{{ url_for('login') }}" class="nav__link">
+                                Вход
+                            </a>
+                        </li>
+                        <li class="header-list-item">
+                            <a href="{{ url_for('registration') }}" class="nav__link">
+                                Регистрация
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
     {% endblock %}
 
     {% block body %}
