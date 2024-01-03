@@ -1,15 +1,15 @@
 {% extends 'main_html/base.html' %}
 
 {% block title%}
-display note title
+Список записей
 {% endblock %}
 
 {% block body %}
-<h1>display note body</h1>
+<h1>Список записей</h1>
 
 {% for note in notes %}
 <div>
-    <strong>Note Title:</strong> {{ note.title }} <strong>Note Content:</strong> {{ note.content }}
+    <strong>Заголовок:</strong> {{ note.title }} <strong>Содержание:</strong> {{ note.content }}
 </div>
 {% endfor %}
 

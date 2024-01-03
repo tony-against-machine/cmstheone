@@ -1,20 +1,20 @@
 {% extends 'main_html/base.html' %}
 
 {% block title %}
-dashboard title
+Список клиентов (Панель инструментов)
 {% endblock %}
 
 {% block body %}
-<h2>Clients:</h2>
+<h2>Список клиентов (Панель инструментов)</h2>
 <ul>
     {% for client in clients %}
     <li>
-        Name: {{ client.name }} (added by: {{ client.username }}) Phone: {{ client.phone }}
-        Balance: {{ client.balance }}
+        Имя: {{ client.name }} (Добавлен пользователем: {{ client.username }}) Телефон: {{ client.phone }}
+        Баланс: {{ client.balance }}
         <form method="post" action="{{ url_for('modify_balance', client_id=client.id) }}">
-            <input type="number" name="amount" step="0.01" placeholder="Enter amount" required>
-            <button type="submit" name="action" value="add">Add</button>
-            <button type="submit" name="action" value="subtract">Subtract</button>
+            <input type="number" name="amount" step="0.01" placeholder="Сумма" required>
+            <button type="submit" name="action" value="add">Добавить</button>
+            <button type="submit" name="action" value="subtract">Вычесть</button>
         </form>
     </li>
     {% endfor %}

@@ -1,11 +1,11 @@
 {% extends 'main_html/base.html' %}
 
 {% block title%}
-add clien title
+Добавить клиента
 {% endblock %}
 
 {% block body %}
-<h1>Add Client</h1>
+<h1>Добавить клиента</h1>
 <form method="POST" action="{{ url_for('add_client') }}">
     {{ form.hidden_tag() }}
     <strong>{{ form.name.label }}:</strong> {{ form.name(size=20) }}
