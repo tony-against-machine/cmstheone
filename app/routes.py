@@ -77,7 +77,7 @@ def modify_balance(client_id):
         client.balance -= amount
 
     db.session.commit()
-    flash(f'Balance modified for {client.name}. New balance: {client.balance}', 'success')
+    print(f'Баланс клиента {client.name} изменен! Текущий баланс: {client.balance}')
     return redirect(url_for('dashboard'))
 
 
