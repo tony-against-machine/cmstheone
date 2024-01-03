@@ -2,13 +2,13 @@
 
 .flex {
     display: flex;
-  }
+}
 
 .list-reset {
     margin: 0;
     padding: 0;
     list-style: none;
-  }
+}
 
 /*/global*/
 
@@ -16,6 +16,13 @@
 
 .header-list-item:not(:last-child) {
     margin-right: 45px;
-  }
+}
+
+.nav__link {
+    font-size: 16px;
+    line-height: 16px;
+    color: #666;
+    transition: color .3s ease-in-out;
+}
 
 /*/header*/
