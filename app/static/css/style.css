@@ -28,6 +28,12 @@ a {
     margin-bottom: 70px;
 }
 
+
+.header__top-block {
+    align-items: center;
+    padding: 30px 0;
+}
+
 .header-list-item:not(:last-child) {
     margin-right: 45px;
 }
