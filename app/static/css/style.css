@@ -34,6 +34,15 @@ a {
     padding: 30px 0;
 }
 
+.header-contacts {
+    margin-left: 40px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 20px;
+    color: #666;
+    transition: color .3s ease-in-out;
+}
+
 .header-list-item:not(:last-child) {
     margin-right: 45px;
 }
