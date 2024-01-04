@@ -43,6 +43,48 @@ a {
     transition: color .3s ease-in-out;
 }
 
+.personal-area {
+    margin-left: auto;
+    padding-left: 0px;
+    font-size: 16px;
+    line-height: 16px;
+    color: var(--color-orange);
+    transition: color .3s ease-in-out;
+}
+
+.personal-area svg {
+    width: 21px;
+    height: 12px;
+    align-items: center;
+    justify-content: center;
+    fill: var(--color-orange);
+    transition: fill .3s ease-in-out;
+}
+
+.personal-area:focus {
+    outline-offset: 3px;
+    outline: 1px solid var(--color-orange);
+    color: var(--color-orange);
+}
+
+.personal-area:hover {
+    color: var(--color-ligth-orange);
+}
+
+.personal-area:hover svg {
+    fill: var(--color-ligth-orange);
+}
+
+.personal-area:active {
+    color: var(--color-dark-orange);
+    outline: none;
+}
+
+.personal-area:active svg {
+    fill: var(--color-dark-orange);
+    outline: none;
+}
+
 .header-list-item:not(:last-child) {
     margin-right: 45px;
 }
