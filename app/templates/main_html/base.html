@@ -15,68 +15,54 @@
 
     {% block header %}
     <header class="header">
-        <div class="container">
-            <div class="header__top-block flex">
-                <a href="" class="header-logo">
-                    <img src="img/logo.svg" alt="Logo">
-                </a>
-                <a href="#" class="header-contacts">
-                    +7-(999)-999-99-99
-                </a>
-                <a href="#" class="personal-area">
-                    <svg width="21" height="12" viewBox="0 0 21 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M10.59 1.41L14.17 5H0V7H14.17L10.58 10.59L12 12L18 6L12 0L10.59 1.41ZM19 0V12H21V0H19Z" />
-                    </svg>
-                    Личный кабинет
-                </a>
-            </div>
-            <div class="header__bottom-block flex">
-                <nav class="header-nav">
-                    <ul class="header-list list-reset flex">
-                        <li class="header-list-item">
-                            <a href="{{ url_for('about') }}" class="nav__link">
-                                О&nbsp;нас
-                            </a>
-                        </li>
-                        <li class="header-list-item">
-                            <a href="{{ url_for('add_client') }}" class="nav__link">
-                                Добавить клиента
-                            </a>
-                        </li>
-                        <li class="header-list-item">
-                            <a href="{{ url_for('add_note') }}" class="nav__link">
-                                Добавить запись
-                            </a>
-                        </li>
-                        <li class="header-list-item">
-                            <a href="{{ url_for('dashboard') }}" class="nav__link">
-                                Список клиентов (Панель инструментов)
-                            </a>
-                        </li>
-                        <li class="header-list-item">
-                            <a href="{{ url_for('display_note') }}" class="nav__link">
-                                Список записей
-                            </a>
-                        </li>
-                        <li class="header-list-item">
-                            <a href="{{ url_for('index') }}" class="nav__link">
-                                Индекс
-                            </a>
-                        </li>
-                        <li class="header-list-item">
-                            <a href="{{ url_for('login') }}" class="nav__link">
-                                Вход
-                            </a>
-                        </li>
-                        <li class="header-list-item">
-                            <a href="{{ url_for('registration') }}" class="nav__link">
-                                Регистрация
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
+        <div class="container flex header__container">
+            <a href="#" class="header__logo">
+                <img src="img/logo.svg" alt="Logo" class="">
+            </a>
+            <nav class="nav header__nav" title="Главное меню">
+                <ul class="nav__list list-reset flex">
+                    <li class="nav__item">
+                        <a href="{{ url_for('about') }}" class="nav__link">
+                            О&nbsp;нас
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="{{ url_for('add_client') }}" class="nav__link">
+                            Добавить клиента
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="{{ url_for('add_note') }}" class="nav__link">
+                            Добавить запись
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="{{ url_for('dashboard') }}" class="nav__link">
+                            Список клиентов (Панель инструментов)
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="{{ url_for('display_note') }}" class="nav__link">
+                            Список записей
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="{{ url_for('index') }}" class="nav__link">
+                            Индекс
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="{{ url_for('login') }}" class="nav__link">
+                            Вход
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="{{ url_for('registration') }}" class="nav__link">
+                            Регистрация
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </header>
     {% endblock %}
